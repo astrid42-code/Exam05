@@ -18,11 +18,11 @@ class ATarget {
 		}
 
 
-	private:
+	protected:
+		std::string _type;
 		ATarget();
 		ATarget(const ATarget & atarget_cp);
 		ATarget & operator=(const ATarget & atarget_op);
-		std::string _type;
 
 
 };
