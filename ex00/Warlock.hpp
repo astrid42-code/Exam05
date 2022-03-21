@@ -7,10 +7,8 @@
 class Warlock{
     public:
         Warlock(std::string name, std::string title);
-        Warlock(const Warlock & warlock_cp);
         ~Warlock();
 
-        Warlock & operator=(const Warlock & warlock_op);
 
         const std::string &	getName() const;
 		const std::string & getTitle() const;
@@ -20,6 +18,8 @@ class Warlock{
 
     private:
         Warlock();
+        Warlock(const Warlock & warlock_cp);
+        Warlock & operator=(const Warlock & warlock_op);
         std::string _name;
         std::string _title;
 };
