@@ -18,13 +18,13 @@ class Warlock{
         void    introduce() const;
 		void	learnSpell(ASpell *aspell){
 			// apprend un sort au warlock
-			aspell.clone();
+			aspell->clone();
 		}
 		void	forgetSpell(std::string spell){
 			// fait oublier le sort s'il en connait un
 		}
 		void	launchSpell(std::string spell, ATarget &atarget){
-			_spell = atarget.getHitBySpell(); 
+			atarget.getHitBySpell();  // a gerer
 		}
 
     private:

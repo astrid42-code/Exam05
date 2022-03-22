@@ -18,7 +18,7 @@ Warlock & Warlock::operator=(const Warlock & warlock_op){
 	return (*this);
 }
 
-// std::ostreqm operator<(ostream &o, const Warlock & warlock_op){
+// std::ostream operator<<(ostream &o, const Warlock & warlock_op){
 // 	o
 // 	<< 
 // 	return (o);

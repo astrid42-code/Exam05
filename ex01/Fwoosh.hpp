@@ -6,12 +6,11 @@
 
 class Fwoosh : public ASpell{
 	public:
-		Fwoosh() : ASpell(_name, _effects), _name("Fwoosh"), _effects("fwooshed"){}
+		Fwoosh() :  _name("Fwoosh"), _effects("fwooshed"){} // ASpell(_name, _effects),
 		~Fwoosh(){}
 
-		Fwoosh *clone(){
-			// cloner quoi? 
-			//return (*this); // doit retourner un ptr sur Fwoosh (donc this?)
+		ASpell *clone() const{
+			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh (donc this?)
 		}
 
 	private:

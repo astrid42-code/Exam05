@@ -4,19 +4,26 @@
 # include <iostream>
 # include "ATarget.hpp"
 
+class ATarget;
+
 class Dummy : public ATarget{
 	public:
-		Dummy() : ATarget(_type), _type("Target Practice Dummy"){}
+		Dummy() : _type("Target Practice Dummy"){} //ATarget(_type), 
 		~Dummy(){}
 
-		Dummy *clone(){
-			return (*this);
+		ATarget *clone(){
+			return (new Dummy(*this));
 		}
 
 	private:
 		std::string _type;
-		Dummy(const Dummy & dum_cp);
-		Dummy & operator=(const Dummy & dum_op);
+		Dummy(const Dummy & dum_cp){
+			_type = dum_cp._type;
+		}
+		Dummy & operator=(const Dummy & dum_op){
+			_type = dum_op._type;
+			return (*this);
+		}
 
 };
 
