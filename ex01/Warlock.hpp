@@ -19,12 +19,17 @@ class Warlock{
 		void	learnSpell(ASpell *aspell){
 			// apprend un sort au warlock
 			aspell->clone();
+			// intialiser _spell par la meme occasion?
 		}
 		void	forgetSpell(std::string spell){
-			// fait oublier le sort s'il en connait un
+			// fait oublier le sort s'il en connait un mais comment??
+			
 		}
 		void	launchSpell(std::string spell, ATarget &atarget){
-			atarget.getHitBySpell();  // a gerer
+			// if (spell == _spell)
+			//	atarget.getHitBySpell();
+			
+			
 		}
 
     private:
