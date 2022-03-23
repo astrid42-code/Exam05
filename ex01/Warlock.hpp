@@ -6,6 +6,7 @@
 # include "ATarget.hpp"
 
 class ASpell;
+class ATarget;
 class Warlock{
     public:
         Warlock(std::string name, std::string title);
@@ -19,16 +20,15 @@ class Warlock{
 		void	learnSpell(ASpell *aspell){
 			// apprend un sort au warlock
 			_spell = aspell->clone();
-			// intialiser _spell par la meme occasion?
 		}
 		void	forgetSpell(std::string spell){
-			// fait oublier le sort s'il en connait un mais comment??
+			// fait oublier le sort s'il en connait un 
 			// if (_spell == a quelque chose)
 			delete _spell;
 		}
 		void	launchSpell(std::string spell, ATarget &atarget){
-			if (spell == _spell.getType())
-				atarget.getHitBySpell();			
+			if (spell == _spell->getEffects())
+				_spell->launch(atarget);			
 		}
 
     private:

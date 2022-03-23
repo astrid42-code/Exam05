@@ -4,6 +4,8 @@
 # include <iostream>
 # include "Aspell.hpp"
 
+class ASpell;
+
 class Fwoosh : public ASpell{
 	public:
 		Fwoosh() :  _name("Fwoosh"), _effects("fwooshed"){} // ASpell(_name, _effects),

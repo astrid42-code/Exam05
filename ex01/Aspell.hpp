@@ -4,8 +4,11 @@
 # include <iostream>
 # include "ATarget.hpp"
 
+class ATarget;
+
 class ASpell{
 	public:
+		ASpell(){}
 		ASpell(std::string name, std::string effects) : _name(name), _effects(effects){}
 		virtual ~ASpell(){}
 
@@ -25,7 +28,6 @@ class ASpell{
 		std::string _effects;
 	
 	 private:// en private ou en protected?
-		ASpell(){}
 		ASpell(const ASpell & aspell_cp){
 			_name = aspell_cp._name;
 			_effects = aspell_cp._effects;
