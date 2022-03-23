@@ -2,6 +2,7 @@
 #define WARLOCK_HPP
 
 #include <iostream>
+# include <map>
 # include "Aspell.hpp"
 # include "ATarget.hpp"
 
@@ -27,8 +28,13 @@ class Warlock{
 			delete _spell;
 		}
 		void	launchSpell(std::string spell, ATarget &atarget){
-			if (spell == _spell->getEffects())
-				_spell->launch(atarget);			
+			// for (int i = 0; i < 100; i++){
+				// std::map<std::string, int> m{{spell, 0}};
+				std::cout << spell << std::endl;
+				if (spell == _spell->getEffects())
+					_spell->launch(atarget);
+			// }
+
 		}
 
     private:

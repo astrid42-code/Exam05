@@ -8,36 +8,20 @@ class ATarget;
 
 class ASpell{
 	public:
-		ASpell(){}
-		ASpell(std::string name, std::string effects) : _name(name), _effects(effects){}
-		virtual ~ASpell(){}
+		ASpell();
+		ASpell(std::string name, std::string effects);
+		ASpell(const ASpell & aspell_cp);
+		ASpell &operator=(const ASpell &aspell_op);
+		virtual ~ASpell();
 
-		std::string getName() const{
-			return (_name);
-		}
-		std::string getEffects() const{
-			return (_effects);
-		}
+		std::string getName() const;
+		std::string getEffects() const;
 		virtual ASpell *clone() const = 0;
-		void	launch(const ATarget &atarget) const{
-			atarget.getHitBySpell(*this); // doit recevoir en param un objet ASpell donc le pointeur this qui contient les donnees de l'objet ASpell
-		}
+		void	launch(const ATarget &atarget) const;
 
 	protected:
 		std::string _name;
 		std::string _effects;
-	
-	 private:// en private ou en protected?
-		ASpell(const ASpell & aspell_cp){
-			_name = aspell_cp._name;
-			_effects = aspell_cp._effects;
-		}
-		ASpell &operator=(const ASpell &aspell_op){
-			_name = aspell_op._name;
-			_effects = aspell_op._effects;
-			return (*this);
-		}
-
 };
 
 #endif

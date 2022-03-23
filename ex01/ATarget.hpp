@@ -5,31 +5,20 @@
 # include "Aspell.hpp"
 
 class ASpell;
-
 class ATarget {
 	public:
-		ATarget(std::string type) : _type(type){}
+		ATarget();
+		ATarget(std::string type);
+		ATarget(const ATarget & atarget_cp);
+		ATarget & operator=(const ATarget & atarget_op);
 		virtual ~ATarget();
 
-		std::string getType() const{
-			return (_type);
-		}
+		std::string getType() const;
 		virtual ATarget *clone() = 0;
-		void	getHitBySpell(const ASpell & aspell) const{
-			std::cout << _type << " has been " << aspell.getEffects() << "!" << std::endl;
-		}
-
+		void	getHitBySpell(const ASpell & aspell) const;
 
 	protected:
 		std::string _type;
-		ATarget(){}
-		ATarget(const ATarget & atarget_cp){
-			_type = atarget_cp._type;
-		}
-		ATarget & operator=(const ATarget & atarget_op){
-			_type = atarget_op._type;
-			return (*this);
-		}
 
 
 };
