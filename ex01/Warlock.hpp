@@ -18,18 +18,17 @@ class Warlock{
         void    introduce() const;
 		void	learnSpell(ASpell *aspell){
 			// apprend un sort au warlock
-			aspell->clone();
+			_spell = aspell->clone();
 			// intialiser _spell par la meme occasion?
 		}
 		void	forgetSpell(std::string spell){
 			// fait oublier le sort s'il en connait un mais comment??
-			
+			// if (_spell == a quelque chose)
+			delete _spell;
 		}
 		void	launchSpell(std::string spell, ATarget &atarget){
-			// if (spell == _spell)
-			//	atarget.getHitBySpell();
-			
-			
+			if (spell == _spell.getType())
+				atarget.getHitBySpell();			
 		}
 
     private:
@@ -38,8 +37,8 @@ class Warlock{
         Warlock & operator=(const Warlock & warlock_op);
         std::string _name;
         std::string _title;
-		std::string _spell;
+		ASpell *_spell; // recuperer un ptr sur l'objet aspell (mais comment comparer ensuite que _spell = spell??)
 };
-// std::ostream operator<(ostream &o, const Warlock & warlock_op);
+// std::ostream operator<<(ostream &o, const Warlock & warlock_op);
 
 #endif

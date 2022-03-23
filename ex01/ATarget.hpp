@@ -23,7 +23,9 @@ class ATarget {
 	protected:
 		std::string _type;
 		ATarget(){}
-		ATarget(const ATarget & atarget_cp){_type = atarget_cp._type}
+		ATarget(const ATarget & atarget_cp){
+			_type = atarget_cp._type;
+		}
 		ATarget & operator=(const ATarget & atarget_op){
 			_type = atarget_op._type;
 			return (*this);
