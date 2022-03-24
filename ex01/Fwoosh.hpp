@@ -8,7 +8,9 @@ class ASpell;
 
 class Fwoosh : public ASpell{
 	public:
-		Fwoosh() :  _name("Fwoosh"), _effects("fwooshed"){}
+		Fwoosh() : _name("Fwoosh"), _effects("fwooshed"){
+		}
+		
 		~Fwoosh(){
 		}
 		Fwoosh(const Fwoosh & fw_cp){
@@ -26,6 +28,17 @@ class Fwoosh : public ASpell{
 			// PB ne retourne rien (ne prend pas en compte le name et les effects)
 		}
 		
+		std::string getName() const{
+			return (_name);
+		}
+
+		std::string getEffects() const{
+			return (_effects);
+		}
+
+		void	launch(const ATarget &atarget) const{
+			atarget.getHitBySpell(*this); // doit recevoir en param un objet ASpell donc le pointeur this qui contient les donnees de l'objet ASpell
+		}
 
 	private:
 		std::string _name;

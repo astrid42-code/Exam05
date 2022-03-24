@@ -24,6 +24,14 @@ class Dummy : public ATarget{
 			return (new Dummy(*this));
 		}
 
+		std::string getType() const{
+			return (_type);
+		}
+
+		void	getHitBySpell(const ASpell & aspell) const{
+			std::cout << _type << " has been " << aspell.getEffects() << "!" << std::endl;
+		}
+
 	private:
 		std::string _type;
 
