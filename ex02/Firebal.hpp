@@ -1,30 +1,30 @@
-#ifndef FWOOSH_HPP
-#define FWOOSH_HPP
+#ifndef FIREBALL_HPP
+#define FIREBALL_HPP
 
-# include <iostream>
+#include <iostream>
 # include "Aspell.hpp"
 
 class ASpell;
 
-class Fwoosh : public ASpell{
+class Fireball : public ASpell{
 	public:
-		Fwoosh() : ASpell("Fwoosh", "fwooshed"){
+		Fireball() : ASpell("Fireball", "burnt to a crisp"){
 		}
 
-		~Fwoosh(){
+		~Fireball(){
 		}
-		Fwoosh(const Fwoosh & fw_cp){
+		Fireball(const Fireball & fw_cp){
 			_name = fw_cp._name;
 			_effects = fw_cp._effects;
 		}
-		Fwoosh	& operator=(const Fwoosh & fw_op){
+		Fireball	& operator=(const Fireball & fw_op){
 			_name = fw_op._name;
 			_effects = fw_op._effects;
 			return (*this);
 		}
 
 		ASpell *clone() const{
-			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh
+			return (new Fireball(*this)); // doit retourner un ptr sur Fireball 
 		}
 		
 		std::string getName() const{
@@ -40,8 +40,6 @@ class Fwoosh : public ASpell{
 		}
 
 	private:
-		// std::string _name;
-		// std::string _effects;
 
 };
 

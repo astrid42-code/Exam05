@@ -1,30 +1,31 @@
-#ifndef FWOOSH_HPP
-#define FWOOSH_HPP
+#ifndef POLYMORPH_HPP
+#define POLYMORPH_HPP
 
-# include <iostream>
+#include <iostream>
+
 # include "Aspell.hpp"
 
 class ASpell;
 
-class Fwoosh : public ASpell{
+class Polymorph : public ASpell{
 	public:
-		Fwoosh() : ASpell("Fwoosh", "fwooshed"){
+		Polymorph() : ASpell("Polymorph", "turned into a critter"){
 		}
 
-		~Fwoosh(){
+		~Polymorph(){
 		}
-		Fwoosh(const Fwoosh & fw_cp){
+		Polymorph(const Polymorph & fw_cp){
 			_name = fw_cp._name;
 			_effects = fw_cp._effects;
 		}
-		Fwoosh	& operator=(const Fwoosh & fw_op){
+		Polymorph	& operator=(const Polymorph & fw_op){
 			_name = fw_op._name;
 			_effects = fw_op._effects;
 			return (*this);
 		}
 
 		ASpell *clone() const{
-			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh
+			return (new Polymorph(*this)); // doit retourner un ptr sur Polymorph 
 		}
 		
 		std::string getName() const{
@@ -40,8 +41,6 @@ class Fwoosh : public ASpell{
 		}
 
 	private:
-		// std::string _name;
-		// std::string _effects;
 
 };
 
