@@ -10,7 +10,7 @@ class ASpell;
 
 class Dummy : public ATarget{
 	public:
-		Dummy() : _type("Target Practice Dummy"){} //ATarget(_type), 
+		Dummy() : ATarget("Target Practice Dummy"){}
 		Dummy(const Dummy & dum_cp){
 			_type = dum_cp._type;
 		}
@@ -33,7 +33,7 @@ class Dummy : public ATarget{
 		}
 
 	private:
-		std::string _type;
+		// std::string _type;
 
 };
 

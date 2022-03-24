@@ -20,25 +20,23 @@ class Warlock{
         void    introduce() const;
 		void	learnSpell(ASpell *aspell){
 			// apprend un sort au warlock
-			_spell = aspell->clone();
-			std::cout << _spell->getName() << _spell->getEffects() << std::endl;
+			m.insert(std::make_pair(aspell->getName(), aspell->clone()));
 		}
-		void	forgetSpell(std::string spell){
+		void	forgetSpell(std::string spell_name){
 			// fait oublier le sort s'il en connait un 
-			// if (_spell == a quelque chose)
-			// delete _spell;
+			std::map<std::string, ASpell * >::iterator it;
+			it = m.find(spell_name);
+			if (it != m.end()){
+				delete it->second;
+				m.erase(spell_name);
+			}
 		}
-		void	launchSpell(std::string spell, ATarget &atarget){
-			// for (int i = 0; i < 100; i++){
-				std::map<std::string, std::string> m;
-				m.insert(std::make_pair(atarget.getType(), spell));
-				// std::cout << spell << std::endl;
-				//  if (spell == _spell->getEffects())
-					_spell->launch(atarget);
-				// PB : a quoi sert m ici si je ne m'en sers pas pour le launch?
-				// comment l'integrer?
-			// }
-
+		void	launchSpell(std::string spell_name, ATarget &atarget){
+			std::map<std::string, ASpell * >::iterator it;
+			it = m.find(spell_name);
+			if (it != m.end()){
+				it->second->launch(atarget);
+			}
 		}
 
     private:
@@ -47,7 +45,7 @@ class Warlock{
         Warlock & operator=(const Warlock & warlock_op);
         std::string _name;
         std::string _title;
-		ASpell *_spell; // recuperer un ptr sur l'objet aspell 
+		std::map<std::string, ASpell * > m;
 };
 // std::ostream operator<<(ostream &o, const Warlock & warlock_op);
 

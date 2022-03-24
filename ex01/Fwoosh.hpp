@@ -8,9 +8,9 @@ class ASpell;
 
 class Fwoosh : public ASpell{
 	public:
-		Fwoosh() : _name("Fwoosh"), _effects("fwooshed"){
+		Fwoosh() : ASpell("Fwoosh", "fwooshed"){
 		}
-		
+
 		~Fwoosh(){
 		}
 		Fwoosh(const Fwoosh & fw_cp){
@@ -41,8 +41,8 @@ class Fwoosh : public ASpell{
 		}
 
 	private:
-		std::string _name;
-		std::string _effects;
+		// std::string _name;
+		// std::string _effects;
 
 };
 

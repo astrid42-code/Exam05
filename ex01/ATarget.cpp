@@ -1,6 +1,6 @@
 #include "ATarget.hpp"
 
-ATarget::ATarget(){}
+ATarget::ATarget() : _type("Abruty"){}
 
 ATarget::ATarget(std::string type) : _type(type){}
 

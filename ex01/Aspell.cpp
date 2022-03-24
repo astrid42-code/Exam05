@@ -1,9 +1,10 @@
 #include "Aspell.hpp"
 
-ASpell::ASpell(){
+ASpell::ASpell() : _name("Bof"), _effects("bofitude"){
 }
-		
-ASpell::ASpell(std::string name, std::string effects) : _name(name), _effects(effects){}
+
+ASpell::ASpell(std::string name, std::string effects) : _name(name), _effects(effects){
+}
 
 ASpell::ASpell(const ASpell & aspell_cp){
 	_name = aspell_cp._name;
