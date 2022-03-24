@@ -8,7 +8,7 @@ class ASpell;
 
 class Fwoosh : public ASpell{
 	public:
-		Fwoosh() :  _name("Fwoosh"), _effects("fwooshed"){} // ASpell(_name, _effects),
+		Fwoosh() :  _name("Fwoosh"), _effects("fwooshed"){}
 		~Fwoosh(){
 		}
 		Fwoosh(const Fwoosh & fw_cp){
@@ -23,6 +23,7 @@ class Fwoosh : public ASpell{
 
 		ASpell *clone() const{
 			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh (donc this?)
+			// PB ne retourne rien (ne prend pas en compte le name et les effects)
 		}
 		
 

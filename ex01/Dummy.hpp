@@ -20,12 +20,9 @@ class Dummy : public ATarget{
 		}
 		~Dummy(){}
 
-		ATarget *clone(){
+		virtual ATarget *clone() const{
 			return (new Dummy(*this));
 		}
-		void	getHitBySpell(const ASpell & aspell) const{
-			std::cout << _type << " has been " << aspell.getEffects() << "!" << std::endl;
-}
 
 	private:
 		std::string _type;
