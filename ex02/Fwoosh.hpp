@@ -24,8 +24,7 @@ class Fwoosh : public ASpell{
 		}
 
 		ASpell *clone() const{
-			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh (donc this?)
-			// PB ne retourne rien (ne prend pas en compte le name et les effects)
+			return (new Fwoosh(*this)); // doit retourner un ptr sur Fwoosh 
 		}
 		
 		std::string getName() const{
@@ -41,8 +40,6 @@ class Fwoosh : public ASpell{
 		}
 
 	private:
-		// std::string _name;
-		// std::string _effects;
 
 };
 

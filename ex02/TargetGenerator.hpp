@@ -9,7 +9,7 @@ class ASpell;
 class TargetGenerator {
 	public:
 		TargetGenerator();
-		TargetGenerator(std::string type);
+		// TargetGenerator(std::string type);
 		TargetGenerator(const TargetGenerator & tg_cp);
 		virtual ~TargetGenerator();
 

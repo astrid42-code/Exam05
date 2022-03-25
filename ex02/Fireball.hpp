@@ -13,13 +13,13 @@ class Fireball : public ASpell{
 
 		~Fireball(){
 		}
-		Fireball(const Fireball & fw_cp){
-			_name = fw_cp._name;
-			_effects = fw_cp._effects;
+		Fireball(const Fireball & fb_cp){
+			_name = fb_cp._name;
+			_effects = fb_cp._effects;
 		}
-		Fireball	& operator=(const Fireball & fw_op){
-			_name = fw_op._name;
-			_effects = fw_op._effects;
+		Fireball	& operator=(const Fireball & fb_op){
+			_name = fb_op._name;
+			_effects = fb_op._effects;
 			return (*this);
 		}
 

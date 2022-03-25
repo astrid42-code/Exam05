@@ -11,18 +11,11 @@ Warlock::~Warlock(){
 	std::cout << _name << ": My job here is done!" << std::endl;
 }
 
-
 Warlock & Warlock::operator=(const Warlock & warlock_op){
 	_name = warlock_op._name;
 	_title = warlock_op._title;
 	return (*this);
 }
-
-// std::ostream operator<<(ostream &o, const Warlock & warlock_op){
-// 	o
-// 	<< 
-// 	return (o);
-// }
 
 const std::string &	Warlock::getName() const{
 	return (_name);
