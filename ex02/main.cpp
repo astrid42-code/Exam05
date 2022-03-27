@@ -3,7 +3,7 @@
 #include "ATarget.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
-#include "Firebal.hpp"
+#include "Fireball.hpp"
 #include "Polymorph.hpp"
 
 int main()

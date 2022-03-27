@@ -5,9 +5,11 @@
 # include <map>
 # include "ASpell.hpp"
 # include "ATarget.hpp"
+# include "SpellBook.hpp"
 
 class ASpell;
 class ATarget;
+class SpellBook;
 
 class Warlock{
     public:
@@ -18,30 +20,21 @@ class Warlock{
 		const std::string & getTitle() const;
 		void	setTitle(const std::string title);
         void    introduce() const;
-		void	learnSpell(ASpell *aspell){
-			// apprend un sort au warlock
-			m.insert(std::make_pair(aspell->getName(), aspell->clone()));
+		void	learnSpell(SpellBook *spell_book){
+			// apprend un sort au warlock a partir du spellbook
+			_book.learnSpell(spell_book);
 		}
-		void	forgetSpell(std::string spell_name){
+		void	forgetSpell(std::string spell_book){
 			// efface le sort dans le spellbook 
-			std::map<std::string, ASpell * >::iterator it;
-			it = m.find(spell_name);
-			if (it != m.end()){
-				delete it->second;
-				m.erase(spell_name);
-			}
+			_book.forgetSpell(spell_book);
 		}
-		void	launchSpell(std::string spell_name, ATarget &atarget){
-			std::map<std::string, ASpell * >::iterator it;
-			it = m.find(spell_name);
-			if (it != m.end()){
-				it->second->launch(atarget);
-			}
-		}
-		ASpell *createSpell(string const &newSpell){
-			//crée le sort correspondant et le retourne
+		void	launchSpell(std::string spell_name, const ATarget & atarget){
+			// creer un nouveau spell dans le spell book
+			_book.createSpell(spell_name);
 
-			return ();
+			// creer un ptr aspell qui recupere le spell cree 
+			// si l'objet existe, le ptr aspell launch la ref de atarget
+			
 		}
 
     private:
@@ -50,7 +43,9 @@ class Warlock{
         Warlock & operator=(const Warlock & warlock_op);
         std::string _name;
         std::string _title;
-		std::map<std::string, ASpell * > m;
+
+		std::map<std::string, SpellBook * > m;
+		SpellBook	_book;
 };
 
 #endif
