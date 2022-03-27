@@ -23,7 +23,7 @@ class Warlock{
 			m.insert(std::make_pair(aspell->getName(), aspell->clone()));
 		}
 		void	forgetSpell(std::string spell_name){
-			// fait oublier le sort s'il en connait un 
+			// efface le sort dans le spellbook 
 			std::map<std::string, ASpell * >::iterator it;
 			it = m.find(spell_name);
 			if (it != m.end()){
@@ -37,6 +37,11 @@ class Warlock{
 			if (it != m.end()){
 				it->second->launch(atarget);
 			}
+		}
+		ASpell *createSpell(string const &newSpell){
+			//crée le sort correspondant et le retourne
+
+			return ();
 		}
 
     private:
