@@ -2,7 +2,7 @@
 #define TARGETGENERATOR_HPP
 
 # include <iostream>
-# include "Aspell.hpp"
+# include "ASpell.hpp"
 
 class ASpell;
 

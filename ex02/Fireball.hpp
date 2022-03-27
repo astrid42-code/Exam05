@@ -2,7 +2,7 @@
 #define FIREBALL_HPP
 
 #include <iostream>
-# include "Aspell.hpp"
+# include "ASpell.hpp"
 
 class ASpell;
 

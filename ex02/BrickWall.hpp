@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include "ATarget.hpp"
-# include "Aspell.hpp"
+# include "ASpell.hpp"
 
 class ATarget;
 class ASpell;

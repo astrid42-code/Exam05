@@ -1,4 +1,4 @@
-#include "Aspell.hpp"
+#include "ASpell.hpp"
 
 ASpell::ASpell() : _name("Bof"), _effects("bofitude"){
 }

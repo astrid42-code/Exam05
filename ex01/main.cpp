@@ -1,5 +1,5 @@
 #include "Warlock.hpp"
-#include "Aspell.hpp"
+#include "ASpell.hpp"
 #include "ATarget.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"

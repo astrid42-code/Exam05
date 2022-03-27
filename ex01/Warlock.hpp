@@ -3,7 +3,7 @@
 
 #include <iostream>
 # include <map>
-# include "Aspell.hpp"
+# include "ASpell.hpp"
 # include "ATarget.hpp"
 
 class ASpell;
