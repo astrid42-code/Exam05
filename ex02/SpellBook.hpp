@@ -21,7 +21,6 @@ class SpellBook{
     private:
 		SpellBook(const SpellBook & SpellBook_cp);
 		SpellBook & operator=(const SpellBook & SpellBook_op);
-		ASpell	*_spell;
 		std::map<std::string, ASpell * > m;
 };
 
