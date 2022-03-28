@@ -29,12 +29,12 @@ class Warlock{
 			_book.forgetSpell(spell_book);
 		}
 		void	launchSpell(std::string spell_name, const ATarget & atarget){
-			// creer un nouveau spell dans le spell book
-			_book.createSpell(spell_name);
+			// pour creer un nouveau spell dans le spell book : creer un ptr aspell qui recupere le spell cree 
+			ASpell	*aspell = _book.createSpell(spell_name);;
 
-			// creer un ptr aspell qui recupere le spell cree 
 			// si l'objet existe, le ptr aspell launch la ref de atarget
-			
+			if (aspell)
+				*aspell.launch(atarget);
 		}
 
     private:
