@@ -2,6 +2,7 @@
 #define TARGETGENERATOR_HPP
 
 # include <iostream>
+# include <map>
 # include "ASpell.hpp"
 
 class ASpell;
@@ -22,6 +23,7 @@ class TargetGenerator {
 	
 	private:
 		TargetGenerator & operator=(const TargetGenerator & tg_op);
+		std::map<std::string, ATarget * > m;
 };
 
 #endif

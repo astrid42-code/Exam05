@@ -8,20 +8,20 @@
 class ATarget;
 class ASpell;
 
-class Brickwall : public ATarget{
+class BrickWall : public ATarget{
 	public:
-		Brickwall() : ATarget("Inconspicuous Red-brick Wall"){}
-		Brickwall(const Brickwall & dum_cp){
+		BrickWall() : ATarget("Inconspicuous Red-brick Wall"){}
+		BrickWall(const BrickWall & dum_cp){
 			_type = dum_cp._type;
 		}
-		Brickwall & operator=(const Brickwall & dum_op){
+		BrickWall & operator=(const BrickWall & dum_op){
 			_type = dum_op._type;
 			return (*this);
 		}
-		~Brickwall(){}
+		~BrickWall(){}
 
 		virtual ATarget *clone() const{
-			return (new Brickwall(*this));
+			return (new BrickWall(*this));
 		}
 
 		std::string getType() const{

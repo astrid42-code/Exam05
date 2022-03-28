@@ -2,13 +2,7 @@
 
 SpellBook::SpellBook(){}
 
-SpellBook::~SpellBook(){
-	std::map<std::string, ASpell * >::iterator it;
-	while (it != m.end()){
-		delete it->second;
-		m.erase(it->first);
-	}
-}
+SpellBook::~SpellBook(){}
 
 void	SpellBook::learnSpell(ASpell *aspell){
 	// copie un sort dans le SpellBook

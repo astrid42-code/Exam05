@@ -5,6 +5,8 @@
 #include "Dummy.hpp"
 #include "Fireball.hpp"
 #include "Polymorph.hpp"
+#include "BrickWall.hpp"
+#include "TargetGenerator.hpp"
 
 int main()
 {

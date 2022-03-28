@@ -20,7 +20,7 @@ class Warlock{
 		const std::string & getTitle() const;
 		void	setTitle(const std::string title);
         void    introduce() const;
-		void	learnSpell(SpellBook *spell_book){
+		void	learnSpell(ASpell *spell_book){
 			// apprend un sort au warlock a partir du spellbook
 			_book.learnSpell(spell_book);
 		}
@@ -34,7 +34,7 @@ class Warlock{
 
 			// si l'objet existe, le ptr aspell launch la ref de atarget
 			if (aspell)
-				*aspell.launch(atarget);
+				aspell->launch(atarget);
 		}
 
     private:
@@ -43,8 +43,6 @@ class Warlock{
         Warlock & operator=(const Warlock & warlock_op);
         std::string _name;
         std::string _title;
-
-		std::map<std::string, SpellBook * > m;
 		SpellBook	_book;
 };
 
